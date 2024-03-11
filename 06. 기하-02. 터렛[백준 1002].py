@@ -16,5 +16,8 @@ for _ in range(T):
     # 두 원이 두  점에서 만날 때 (적이 둘)
     elif diff < dist < r1 + r2:
         ans = 2
+    else:
+        print(0)  # 그 외에
 
     print(ans)
+# https://itstory1592.tistory.com/33 설명 참고 블로그

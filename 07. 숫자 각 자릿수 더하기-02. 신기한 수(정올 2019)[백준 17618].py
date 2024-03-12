@@ -1,4 +1,4 @@
-#100점, PyPy3 111592kb	2656ms
+#풀이1) 100점, PyPy3 111592kb	2656ms
 import sys
 n=int(sys.stdin.readline().rstrip())
 cnt=0
@@ -7,7 +7,7 @@ for i in range(1, n+1):
     if i % tmp == 0: cnt+=1
 print(cnt)
 
-#78점, Python3 	31120kb	496ms
+#풀이2)78점, Python3 	31120kb	496ms
 N = int(input())
 
 def solve(n):

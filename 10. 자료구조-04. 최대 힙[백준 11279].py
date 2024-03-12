@@ -20,3 +20,5 @@ for _ in range(N):
         if len(heap):
             print(-heapq.heappop(heap))
         else: print(0)
+            
+'''최소힙 백준 1715번: 카드 정렬하기'''

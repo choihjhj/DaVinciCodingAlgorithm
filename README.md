@@ -19,6 +19,18 @@ arr = map(int, sys.stdin.readline().rstrip().split())
 #-내림차순, +오름차순
 arr.sort(key=lambda x : (-x[1], x[2], -x[3], x[0])) # 첫번째로 x[1] 내림차순 정렬, x[1]이 같으면 두번째로 x[2] 오름차순 정렬, x[1],x[2] 같으면 세번째로 x[3] 내림차순 정렬,x[1],x[2],x[3]이 같으면 네번째로 x[0] 오름차순 정렬 
 ```
-4) 변경 값이 없으면 list 대신 튜플사용
+4) 변경 값이 없으면 list([]) 대신 list((,))튜플사용
 ```
+import sys
+N = int(sys.stdin.readline().rstrip())
+
+arr = []
+for _ in range(N):
+    name, *scores = sys.stdin.readline().rstrip().split()
+    arr.append((name, *map(int, scores)))
+
+arr.sort(key=lambda x : (-x[1], x[2], -x[3], x[0])) #-내림차순, +오름차순
+
+for st in arr:
+    print(st[0])
 ```

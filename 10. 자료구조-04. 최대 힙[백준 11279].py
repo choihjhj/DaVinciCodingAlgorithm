@@ -8,21 +8,15 @@ heapq.pop(리스트)
 heapq.heappush(리스트,-데이터값)
 -heapq.pop(리스트)
 '''
+#최대힙 이용(내림차순)
 import heapq
-import sys 
-
-input = sys.stdin.readline
-N = int(input())
-heap = []
-
+import sys
+N=int(sys.stdin.readline().rstrip())
+heap=[]
 for _ in range(N):
-    qst = int(input())
-
-    if qst:
-        heapq.heappush(heap, -qst)
-    else:
+    x=int(sys.stdin.readline().rstrip())
+    if x: heapq.heappush(heap, -x)
+    else: 
         if len(heap):
-            temp = heapq.heappop(heap)
-            print(-temp)
-        else:
-            print(0)
+            print(-heapq.heappop(heap))
+        else: print(0)

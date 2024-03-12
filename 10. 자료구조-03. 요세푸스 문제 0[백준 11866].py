@@ -1,4 +1,4 @@
-#	34008kb	120ms
+#	Python3 34008kb	120ms
 import sys
 from collections import deque
 N,K=map(int,sys.stdin.readline().rstrip().split())
@@ -13,3 +13,9 @@ while dq:
 print('<', end='')    
 print(*subdq, sep=', ', end='')
 print('>')
+
+'''
+같은 문제 백준 1158. 요세푸스
+Python3 34008kb	    4728ms
+PyPy3   246712kb	440ms
+'''

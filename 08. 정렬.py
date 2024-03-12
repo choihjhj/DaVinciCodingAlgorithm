@@ -17,10 +17,9 @@ print(*s)
 
 #삽입정렬
 s=list(map(int, input().split()))
-new=[s[0]]
 for i in range(1, len(s)):
-	j=0
-	while j<i and new[j]<s[i]:
-		j += 1
-	new.insert(j, s[i])
-print(*new)
+	j=i
+	while 0<j and s[j]<s[j-1]:	
+		s[j], s[j-1] =s[j-1],s[j]
+		j -= 1
+print(*s)

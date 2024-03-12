@@ -1,4 +1,5 @@
 #	Python3 34008kb	120ms
+#	PyPy3    113812kb	144ms
 import sys
 from collections import deque
 N,K=map(int,sys.stdin.readline().rstrip().split())

@@ -16,7 +16,8 @@ for i in range(N):
 
 print(cnt)
 '''
+[회전초밥 상위 버전 문제]
 백준 15961번: 회전 초밥
-슬라이딩 윈도우 방법으로 푸는 문제
+- 슬라이딩 윈도우 방법으로 푸는 문제
 https://www.acmicpc.net/problem/15961
 '''

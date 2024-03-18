@@ -1,3 +1,6 @@
+'''
+모르겠음.....정올문제
+'''
 N = int(input())
 honeys = [0] + list(map(int, input().split()))
 hs = []

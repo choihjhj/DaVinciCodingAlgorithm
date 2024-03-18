@@ -11,6 +11,7 @@ for i in range(K, N):
 print(maxx)
 
 # 슬라이딩 윈도우로 풀었을 때 코드
+'''
 N, K = map(int, input().split())
 
 arr = list(map(int, input().split()))
@@ -22,3 +23,4 @@ for i in range(K, N):
     result = max(result, temp)
 
 print(result)
+'''

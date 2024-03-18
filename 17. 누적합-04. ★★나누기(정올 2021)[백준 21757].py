@@ -1,3 +1,6 @@
+'''
+모르겠음..... 정올문제
+'''
 N = int(input())
 arr = list(map(int, input().split()))
 

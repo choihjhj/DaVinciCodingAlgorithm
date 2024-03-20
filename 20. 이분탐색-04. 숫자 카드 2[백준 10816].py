@@ -1,6 +1,6 @@
 '''유튜브 바킹독에서 추천한 문제
 '''
-#풀이1) bisect 모듈 이용
+#풀이1) bisect 모듈 이용 PyPy3 	219636kb	896ms
 from bisect import bisect_left, bisect_right
 N = int(input())
 A = list(map(int, input().split()))
@@ -19,7 +19,7 @@ def binary_search(b):
 for b in B:
     print(binary_search(b), end=' ')
 
-#풀이2) Counter 모듈 이용
+#풀이2) Counter 모듈 이용 PyPy3 262600kb	604ms
 from collections import Counter
 
 N = int(input())

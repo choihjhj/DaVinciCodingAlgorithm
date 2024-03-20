@@ -1,0 +1,44 @@
+#풀이1) 그냥풀기
+import sys
+n=int(sys.stdin.readline()) 
+A=list(map(int, sys.stdin.readline().rstrip().split()))
+m=int(sys.stdin.readline()) 
+B=list(map(int, sys.stdin.readline().rstrip().split()))
+for i in B:
+    print(1 if i in A else 0)
+
+#풀이2) from bisect import bisect_left 이용
+import sys
+from bisect import bisect_left
+n=int(sys.stdin.readline()) 
+A=list(map(int, sys.stdin.readline().rstrip().split()))
+m=int(sys.stdin.readline()) 
+B=list(map(int, sys.stdin.readline().rstrip().split()))
+A.sort()
+for i in B:
+    idx=bisect_left(A,i)
+    print(1 if idx<n and A[idx]==i else 0)
+    
+#풀이3) 이진탐색으로 풀기
+import sys
+from bisect import bisect_left
+n=int(sys.stdin.readline()) 
+A=list(map(int, sys.stdin.readline().rstrip().split()))
+m=int(sys.stdin.readline()) 
+B=list(map(int, sys.stdin.readline().rstrip().split()))
+A.sort()
+def binary_search(k):
+    start = 0
+    end = n-1
+    while start <= end:
+        mid = (start + end) // 2
+        if A[mid] == k:
+            return 1
+        if A[mid] < k:
+            start = mid + 1
+        else:
+            end = mid - 1
+    return 0
+for q in B:
+    print(binary_search(q))
+

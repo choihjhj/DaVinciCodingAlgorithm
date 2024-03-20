@@ -3,7 +3,7 @@ import sys
 n=int(sys.stdin.readline()) #15
 sum,end,cnt=0,0,0
 for start in range(1,n+1):
-    while end<=n and sum<n:
+    while end<=n and sum<n: #자기자신 n도 포함해서 체크해야함 다른 문제는 end<n이었는데
         sum+=end
         end+=1
     if sum==n:

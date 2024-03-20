@@ -41,3 +41,16 @@ for st in arr:
     print(st[0])
 ```
 5) 메모리보다 속도가 중요하면 Python 대신 PyPy로 제출 
+6) 이분탐색 O(logN) 사용할 때, from bisect import bisect_left, bisect_right 이용하기
+```
+import sys
+from bisect import bisect_left
+n=int(sys.stdin.readline()) 
+A=list(map(int, sys.stdin.readline().rstrip().split()))
+m=int(sys.stdin.readline()) 
+B=list(map(int, sys.stdin.readline().rstrip().split()))
+A.sort()
+for i in B:
+    idx=bisect_left(A,i)
+    print(1 if idx<n and A[idx]==i else 0)
+```

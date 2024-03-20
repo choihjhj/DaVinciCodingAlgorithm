@@ -1,3 +1,8 @@
+'''
+특정합을 가지는 부분 연속 수열 찾기 문제
+일반적인 for문으로 풀면 O(N^2) 
+투포인터 방법은 O(N)으로 시간 단축 가능함
+'''
 # 풀이1) 다빈치 코딩 알고리즘 풀이
 N, M = map(int, input().split())
 arr = list(map(int, input().split()))

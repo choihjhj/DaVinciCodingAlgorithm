@@ -1,3 +1,5 @@
+''' 바킹독에선 이 문제를 parametric search 라고 부름, 꽤 어려운 유형
+'''
 #풀이1) 이분탐색
 import sys
 K,N=map(int, sys.stdin.readline().rstrip().split())

@@ -8,7 +8,40 @@
 4. 백준 알고리즘 분류 제출순으로 풀기 (https://www.acmicpc.net/problem/tags)
 -->    
 # 시간복잡도 빅오표기법
-O(1) < O(logN) < O(N) < O(NlogN) < O(N^2) < O(N^3) < O(2^n) < O(n!)
+## O(1) < O(logN) < O(N) < O(NlogN) < O(N^2) < O(N^3) < O(2^n) < O(n!)
+**O(1)**     
+리스트에서 인덱스를 사용하여 데이터 찾을 때    
+- 변수명.append()
+사전의 키 혹은 집합의 원소를 이용해 O(1)의 시간 복잡도로 조회한다.
+          
+**O(logN)**     
+이진 트리 탐색, 우선순위큐PriorityQueue()힙정렬     
+         
+**O(N)**     
+정렬되지 않은 배열에서 데이터 검색 등     
+투포인터(부분합)     
+- 변수명.reverse()
+- 변수명.insert(인덱스,특정값)
+- 변수명.count(특정값)
+- 변수명.remove(특정값) #특정값이 여러개면 하나만 지움
+        
+**O(NlogN)**     
+퀵정렬, 머지정렬 등 ,heappush랑 heappop은 O(nlogn) 우선순위큐의 put,get도     
+- 변수명.sort()
+- 변수명.sort(reverse=True) #내림차순 정렬
+       
+**O(N^2)**   
+버블 정렬, 삽입정렬 등   
+       
+**O(N^3)**   
+편상관관계 계산 등   
+        
+**O(2^n)**   
+피보나치, Brutal Force 등   
+         
+**O(n!)**   
+완전탐색(Brutal Force)무작위 대입      
+   
 ---
 ### [시간 단축 방법]
 1) 컴파일 에러시 재귀함수 깊이 제한 (Python3만 적용가능, PyPy3는 적용안됨)

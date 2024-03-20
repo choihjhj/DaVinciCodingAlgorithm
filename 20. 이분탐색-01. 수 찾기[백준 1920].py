@@ -21,7 +21,6 @@ for i in B:
     
 #풀이3) 이진탐색으로 풀기, 이것도 O(MlogN), 	48780kb	436ms
 import sys
-from bisect import bisect_left
 n=int(sys.stdin.readline()) 
 A=list(map(int, sys.stdin.readline().rstrip().split()))
 m=int(sys.stdin.readline()) 

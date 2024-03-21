@@ -1,45 +1,34 @@
 # DFS(깊이우선탐색)
 visited = [[False] * M for _ in range(N)]
-dy = (-1, 1, 0, 0)
-dx = (0, 0, -1, 1)
-def dfs(y, x):
-    print(y, x)
-    visited[y][x] = True
+d=[(-1,0),(1,0),(0,-1),(0,1)] #상하좌우
+def dfs(x, y):
+    visited[x][y] = True
     for i in range(4):
-        ny = y + dy[i]
-        nx = x + dx[i]
-        if not(0 <= ny < N and 0 <= nx < M):
-            continue
-        if arr[ny][nx] == 1:
-            continue
-        if not visited[ny][nx]:
-            dfs(ny, nx)
+        nx = x + d[i][0]
+        ny = y + d[i][1]
+        if (0 <= nx < N and 0 <= ny < M):
+            if  not visited[nx][ny]:
+                dfs(nx,ny)
 
 dfs(0, 0)
 
 # BFS(너비우선탐색)
 from collections import deque
-def bfs(y, x):
-    visited = [[False] * M for _ in range(N)]
-    dy = (-1, 1, 0, 0)
-    dx = (0, 0, -1, 1)
-
-    visited[y][x] = True
+visited = [[False] * M for _ in range(N)]
+d=[(-1,0),(1,0),(0,-1),(0,1)] #상하좌우
+def bfs(x, y):
+    visited[x][y] = True
     que = deque()
-    que.append((y, x))
+    que.append((x, y))
 
     while que:
-        y, x = que.popleft()
-        print(y, x)
+        x, y = que.popleft()
         for i in range(4):
-            ny = y + dy[i]
-            nx = x + dx[i]
-            if not(0 <= ny < N and 0 <= nx < M):
-                continue
-            if arr[ny][nx] == 1:
-                continue
-            if not visited[ny][nx]:
-                visited[ny][nx] = True
-                que.append((ny, nx))
+           nx = x + d[i][0]
+           ny = y + d[i][1]
+            if (0 <= nx < N and 0 <= ny < M):
+                if  not visited[nx][ny]:
+                    visited[nx][ny] = True
+                    que.append((nx, ny))
 
 bfs(0, 0)

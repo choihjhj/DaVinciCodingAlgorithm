@@ -1,3 +1,5 @@
+import sys
+sys.setrecursionlimit(10**4)
 N=int(input())
 d = [(-1,0), (1,0), (0,-1), (0,1)]
 arr=[list(input()) for _ in range(N)]

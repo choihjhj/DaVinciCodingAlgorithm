@@ -1,7 +1,7 @@
 # 코테 공부방법
 1. 위키독스 점프투파이썬으로 파이썬 문법 공부 (https://wikidocs.net/book/7601)
-2. 위키독스 다빈치 코딩 알고리즘으로 알고리즘 공부 (https://wikidocs.net/book/10280)
-3. 바킹독 유튜브 알고리즘 강의로 복습 (https://youtube.com/playlist?list=PLtqbFd2VIQv4O6D6l9HcD732hdrnYb6CY&si=i36d64oIhritIiLE)
+2. 위키독스 다빈치 코딩 알고리즘으로 알고리즘 공부 1회독 (https://wikidocs.net/book/10280)
+3. 다빈치코딩알고리즘 2회독
 4. 이코테 책
 <!--
 3. 이코테 파이썬 책 공부 +  Do it! 알고리즘 코딩테스트(Python) 책공부

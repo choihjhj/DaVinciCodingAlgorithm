@@ -1,3 +1,9 @@
+'''
+이건 3차원 리스트 문제고, 앞뒤까지 있어 주의해야하는 문제!
+d=[(0,-1,0),(0,1,0),(0,0,-1),(0,0,1),(-1,0,0),(1,0,0)] #상하좌우앞뒤 
+방향셋팅이 중요!
+1을 찾아 주위의 0을 익혀가는 3차원 리스트 문제, [백준7576번 토마토 문제] 2차원 리스트의 상위 버전 문제임
+'''
 import sys
 from collections import deque
 M,N,H=map(int, sys.stdin.readline().rstrip().split()) #가로,세로,상자수
@@ -12,7 +18,7 @@ for i in range(H):
             if row[k]==1:
                 dq.append((i,j,k))
         temp.append(row)
-    arr.append(temp)
+    arr.append(temp) #2차원 리스트를 append해서 3차원 리스트로 만들기
 def bfs():
     while dq:
         i,j,k=dq.popleft()

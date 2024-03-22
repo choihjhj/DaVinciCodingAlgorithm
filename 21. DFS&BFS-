@@ -1,0 +1,36 @@
+import sys
+from collections import deque
+M,N,H=map(int, sys.stdin.readline().rstrip().split()) #가로,세로,상자수
+d=[(0,-1,0),(0,1,0),(0,0,-1),(0,0,1),(-1,0,0),(1,0,0)] #상하좌우앞뒤
+dq=deque()
+arr=[]
+for i in range(H):
+    temp=[]
+    for j in range(N):
+        row=list(map(int, sys.stdin.readline().rstrip().split()))
+        for k in range(M):
+            if row[k]==1:
+                dq.append((i,j,k))
+        temp.append(row)
+    arr.append(temp)
+def bfs():
+    while dq:
+        i,j,k=dq.popleft()
+        for p in range(6):
+           ni=i+d[p][0] 
+           nj=j+d[p][1]
+           nk=k+d[p][2]
+           if (0<=ni<H and 0<=nj<N and 0<=nk<M) and arr[ni][nj][nk]==0:
+               arr[ni][nj][nk]=arr[i][j][k]+1
+               dq.append((ni,nj,nk))
+bfs()
+def get_day():
+    result=0
+    for i in range(H):
+        for row in arr[i]:
+            if 0 in row:
+                return -1
+            maxx=max(row)
+            if result<maxx: result=maxx
+    return result-1
+print(get_day())

@@ -21,3 +21,29 @@ def dfs(node):
             cnt+=1
 dfs(1)
 print(cnt)
+
+# 풀이2) BFS
+import sys
+from collections import deque
+N=int(sys.stdin.readline().rstrip())
+M=int(sys.stdin.readline().rstrip())
+
+arr=[[] for _ in range(N+1)] #맨앞 빈배열[]
+for _ in range(M):
+  u, v = map(int, sys.stdin.readline().rstrip().split())
+  arr[u].append(v)
+  arr[v].append(u)
+
+visited = [False] * (N + 1)
+cnt=0
+def bfs(node):
+    dq=deque([node])
+    global cnt
+    while dq:     
+      for next_node in arr[dq.popleft()]:
+          if not visited[next_node]:
+              dq.append(next_node)
+              cnt+=1
+
+bfs(1)
+print(cnt)

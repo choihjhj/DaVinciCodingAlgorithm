@@ -3,8 +3,8 @@ import sys
 sys.setrecursionlimit(10**4)
 N=int(sys.stdin.readline().rstrip())
 M=int(sys.stdin.readline().rstrip())
-arr=[[] for _ in range(N+1)] #맨앞 빈배열[]
 
+arr=[[] for _ in range(N+1)] #맨앞 빈배열[]
 for _ in range(M):
   u, v = map(int, sys.stdin.readline().rstrip().split())
   arr[u].append(v)
@@ -15,10 +15,9 @@ cnt=0
 def dfs(node):
     visited[node] = True
     global cnt
-    cnt+=1
     for next_node in arr[node]:
         if not visited[next_node]:
             dfs(next_node)
-        
+            cnt+=1
 dfs(1)
-print(cnt-1) #자기자신빼기
+print(cnt)

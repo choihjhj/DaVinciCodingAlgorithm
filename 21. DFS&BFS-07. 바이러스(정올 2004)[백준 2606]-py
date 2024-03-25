@@ -1,4 +1,4 @@
-# 풀이1) DFS
+# 풀이1) DFS 1
 import sys
 sys.setrecursionlimit(10**4)
 N=int(sys.stdin.readline().rstrip())
@@ -19,7 +19,7 @@ def dfs(node):
     return cnt
 print(dfs(1)-1) #자기자신 빼기
 
-# 풀이2) DFS 2 //이게 헷갈리지 않고 좋음!
+# 풀이2) DFS 2 
 import sys
 sys.setrecursionlimit(10**4)
 N=int(sys.stdin.readline().rstrip())

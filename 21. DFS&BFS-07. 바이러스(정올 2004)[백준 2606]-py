@@ -47,3 +47,36 @@ def bfs(node):
 
 bfs(1)
 print(cnt)
+
+#///////
+from collections import deque
+
+n = int(input())
+connect = int(input())
+graph = [[] for i in range(n+1)]  #1
+visited = [False]*(n+1)
+cnt = 0
+
+for i in range(connect):
+    s, e = map(int, input().split())
+    #2 네트워크 상 연결 : 양방향
+    graph[s].append(e)
+    graph[e].append(s)
+
+def bfs(graph, v):
+    global cnt
+    queue = deque([v])  #3
+
+    while queue:  #4
+        pop = queue.popleft()  #5
+        visited[pop] = True
+
+        for i in graph[pop]:
+            if visited[i]==False:
+                visited[i] = True
+                queue.append(i)  #6
+                cnt += 1  #7
+    print(cnt)
+
+bfs(graph, 1)
+출처: https://hei-jayden.tistory.com/103 [알음알음 성장로그:티스토리]

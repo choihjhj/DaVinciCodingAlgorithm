@@ -1,70 +1,39 @@
-# 풀이1) DFS 1
-import sys
-sys.setrecursionlimit(10**4)
-N=int(sys.stdin.readline().rstrip())
-M=int(sys.stdin.readline().rstrip())
-arr=[[] for _ in range(N+1)] #맨앞 빈배열[]
-for _ in range(M):
-  u, v = map(int, sys.stdin.readline().rstrip().split())
-  arr[u].append(v)
-  arr[v].append(u)
-
-visited = [False] * (N + 1)
-def dfs(node):
-    visited[node] = True
-    cnt=1
-    for next_node in arr[node]:
-        if not visited[next_node]:
-            cnt+=dfs(next_node)
-    return cnt
-print(dfs(1)-1) #자기자신 빼기
-
-# 풀이2) DFS 2 
-import sys
-sys.setrecursionlimit(10**4)
-N=int(sys.stdin.readline().rstrip())
-M=int(sys.stdin.readline().rstrip())
-
-arr=[[] for _ in range(N+1)] #맨앞 빈배열[]
-for _ in range(M):
-  u, v = map(int, sys.stdin.readline().rstrip().split())
-  arr[u].append(v)
-  arr[v].append(u)
-
-visited = [False] * (N + 1)
-cnt=0
-def dfs(node):
-    visited[node] = True
-    global cnt
-    for next_node in arr[node]:
-        if not visited[next_node]:
-            dfs(next_node)
-            cnt+=1
-dfs(1)    
-print(cnt) 
-
-# 풀이3) BFS
+''' DFS 문제, 1번 컴터에 연결된 바이러스 컴터 개수니까 DFS(1)-1 자기자신은 빼줘야함
+만약, 4번 컴터에 연결된 컴터 수 라면 DFS(4)-1
+'''
 import sys
 from collections import deque
-N=int(sys.stdin.readline().rstrip())
-M=int(sys.stdin.readline().rstrip())
-arr=[[] for _ in range(N+1)] #맨앞 빈배열[]
+sys.setrecursionlimit(10**6)
+input=sys.stdin.readline
+N=int(input().rstrip())
+M=int(input().rstrip())
+visited=[0]*(N+1)
+arr=[[] for _ in range(N+1)]
 for _ in range(M):
-  u, v = map(int, sys.stdin.readline().rstrip().split())
-  arr[u].append(v)
-  arr[v].append(u)
+    u,v=map(int, input().rstrip().split())
+    arr[u].append(v)
+    arr[v].append(u)
 
-visited = [False] * (N + 1)
-def bfs(node):
-    dq=deque([node])
-    visited[node]=True
-    cnt=0
+def DFS(node):
+    visited[node]=1
+    cnt=1
+    for i in arr[node]:
+        if not visited[i]:
+            cnt+=DFS(i)
+    return cnt
+
+def BFS(node):
+    visited[node]=1
+    cnt=1
+    dq=deque()
+    dq.append(node)
     while dq:
-        v=dq.popleft()
-        for next_node in arr[v]:
-            if not visited[next_node]:
-                dq.append(next_node)
-                visited[next_node]=True
+        for i in arr[dq.popleft()]:
+            if not visited[i]:
+                visited[i]=1
+                dq.append(i)
                 cnt+=1
     return cnt
-print(bfs(1))
+
+print(DFS(1)-1)
+# print(BFS(1)-1)

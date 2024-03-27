@@ -14,7 +14,7 @@ for i in range(N):
         if row[j] == 1: #익은 토마토 덱에 위치 넣기
             queue.append((i, j))
 
-d = d=[(-1,0),(1,0),(0,-1),(0,1)] #상하좌우
+d=[(-1,0),(1,0),(0,-1),(0,1)] #상하좌우
 def bfs():  
     while queue: #토마토 다 익힐때까지 반복 (0없애기)
         x, y = queue.popleft()

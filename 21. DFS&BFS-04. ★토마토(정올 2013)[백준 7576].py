@@ -3,6 +3,39 @@
 1 익은 토마토를 찾아 0안익은 토마토를 익혀나가야한다. -1은 빈칸임
 익은 토마토 위치 덱에 넣기
 '''
+# 풀이1)
+import sys
+from collections import deque
+input=sys.stdin.readline
+M,N=map(int, input().rstrip().split())
+arr=[]
+cnt=deque()
+for i in range(N):
+    row=list(map(int, input().rstrip().split()))
+    arr.append(row)
+    for j in range(M):
+        if row[j]==1:
+            cnt.append((i,j))
+d=[(-1,0),(1,0),(0,-1),(0,1)] #상하좌우
+def BFS():
+    while cnt:
+        x,y=cnt.popleft()
+        for i in range(4):
+            nx = x + d[i][0]
+            ny = y + d[i][1]
+            if 0 <= nx < N and 0 <= ny < M and arr[nx][ny] == 0:
+                arr[nx][ny]=arr[x][y]+1
+                cnt.append((nx,ny))            
+BFS()
+result=0
+for row in arr:
+    if 0 in row: 
+        print(-1)
+        exit(0)
+    result=max(result,max(row))
+print(result-1)
+
+# 풀이2)
 from collections import deque
 M, N = map(int, input().split())
 arr = []

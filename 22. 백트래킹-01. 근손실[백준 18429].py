@@ -1,3 +1,4 @@
+'''브루트포스 알고리즘 + 백트래킹 문제'''
 import sys
 input=sys.stdin.readline
 N, K = map(int, input().rstrip().split())

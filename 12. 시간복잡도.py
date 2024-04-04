@@ -37,7 +37,9 @@ O(N^3)
 O(2^n)
 피보나치, Brutal Force 등
 O(n!)
-완전탐색(Brutal Force)무작위 대입
+완전탐색(Brutal Force)무작위 대입     
+순열, 조합   
+중복없는 백트래킹    
 
 # 순열-서로 다른 n개에서 서로 다른 r개를 선택하여 일렬로 나열하는 것
 {'A','B','C'}에서 3개를 선택하여 나열하는 경우:'ABC','ACB','BAC','BCA','CAB','CBA'

@@ -18,11 +18,11 @@ def backtraking(num):
     if num==M:
         print(*arr)
         return
-    for i in range(1,N+1):
+    for i in range(1,N+1): #부모탐색
         if not visited[i]:
             visited[i]=True
             arr.append(i)
-            backtraking(num+1)
+            backtraking(num+1) #자식탐색
             visited[i]=False
             arr.pop()
 backtraking(0)

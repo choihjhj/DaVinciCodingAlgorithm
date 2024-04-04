@@ -33,25 +33,3 @@ def dfs(n, weight):
             visited[i] = False
 dfs(0, 500)
 print(cnt)
-
-# 풀이3) 백트래킹2
-import sys
-input=sys.stdin.readline
-N, K = map(int, input().rstrip().split())
-A = list(map(int, input().rstrip().split()))
-cnt = 0
-w=500
-visited = [False] * N
-def dfs(n):
-    global cnt,w
-    if n == N:
-        cnt += 1
-        return
-    for i in range(N):
-        if not visited[i] and w+A[i]-K >= 500 :
-            w+=A[i]-K
-            visited[i] = True
-            dfs(n + 1)
-            visited[i] = False
-dfs(0)
-print(cnt)

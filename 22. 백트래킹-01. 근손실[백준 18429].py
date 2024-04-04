@@ -1,4 +1,20 @@
 '''브루트포스 알고리즘 + 백트래킹 문제'''
+풀이1) 순열 permutations 이용
+from itertools import permutations
+import sys
+input=sys.stdin.readline
+N,K=map(int, input().split())
+arr=list(map(int, input().split()))
+cnt=0
+for i in permutations(arr,N):
+    w=500
+    for j in i:
+        w+=j-K
+        if w<500: break
+    if w>=500: cnt+=1            
+print(cnt)
+
+풀이2) 백트래킹
 import sys
 input=sys.stdin.readline
 N, K = map(int, input().rstrip().split())

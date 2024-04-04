@@ -40,7 +40,8 @@
 피보나치, Brutal Force 등   
          
 **O(n!)**   
-완전탐색(Brutal Force)무작위 대입      
+완전탐색(Brutal Force)무작위 대입     
+중복, 순열, 백트래킹
    
 ---
 ### [시간 단축 방법]
